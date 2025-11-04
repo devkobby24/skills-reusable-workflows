@@ -6,6 +6,9 @@ on:
       node:
         required: true
         type: string
+      os: 
+        required: true
+        type: string
 
 jobs:
   build:
@@ -14,6 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Output the input value
+      - name: Output the input values
         run: |
           echo "The node version to use is: ${{ inputs.node }}"
+          echo "The operating system to use is: ${{ inputs.os }}"

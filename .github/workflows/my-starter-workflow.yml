@@ -18,6 +18,8 @@ jobs:
     strategy:
       matrix:
         nodeversion: [14, 16, 18, 20]
+        operatingsystem: [ubuntu-latest, mac-latest, windows-latest]
     uses: ./.github/workflows/reusable-workflow.yml
     with:
       node: ${{ matrix.nodeversion }}
+      os: ${{ matrix.operatingsystem }}
